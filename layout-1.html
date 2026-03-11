@@ -164,159 +164,126 @@
             </div>
         </section>
 
-        <!-- Product Catalog -->
-        <section id="products" class="section catalog-section">
-            <div class="container">
-                <div class="section-header-flex">
-                    <div>
-                        <h2 class="section-title">แคตตาล็อกสินค้าพื้นฐาน</h2>
-                        <h3 class="section-subtitle m-0">รายการครุภัณฑ์ทางการแพทย์ที่เคยผลิต (บางส่วน)</h3>
+        <!-- Product Catalog with Sidebar (Hybrid from Image 3) -->
+        <section id="products" class="section catalog-section bg-light">
+            <div class="container catalog-layout">
+
+                <!-- Sidebar -->
+                <aside class="catalog-sidebar">
+                    <div class="sidebar-heading">≡ หมวดหมู่สินค้า</div>
+                    <ul class="sidebar-menu">
+                        <li><a href="#products" class="active" onclick="filterCatalog(event, 'all')">สินค้าทั้งหมด</a>
+                        </li>
+                        <li><a href="#products" onclick="filterCatalog(event, 'beds')">เตียงผู้ป่วย / ตู้สแตนเลส</a>
+                        </li>
+                        <li><a href="#products" onclick="filterCatalog(event, 'carts')">รถเข็นสแตนเลส / จ่ายยา</a></li>
+                        <li><a href="#products" onclick="filterCatalog(event, 'ward')">อุปกรณ์ทั่วไปในวอร์ด</a></li>
+                        <li><a href="#products" onclick="filterCatalog(event, 'ward')">เสาน้ำเกลือ / ที่วางอ่าง</a></li>
+                        <li><a href="#products" onclick="filterCatalog(event, 'beds')">โต๊ะตรวจโรค / โต๊ะคลอด</a></li>
+                    </ul>
+                    <div class="sidebar-contact-box">
+                        <h4>ติดต่อสั่งซื้อด่วน</h4>
+                        <p>☎️ 02-XXX-XXXX</p>
+                        <p>📱 Line: @djkequipment</p>
+                        <p>📧 sales@djkequipment.com</p>
                     </div>
-                    <div class="catalog-filters">
-                        <span class="filter-btn active" onclick="filterCatalog(event, 'all')">ทั้งหมด</span>
-                        <span class="filter-btn" onclick="filterCatalog(event, 'beds')">เตียง / ตู้</span>
-                        <span class="filter-btn" onclick="filterCatalog(event, 'carts')">รถเข็น</span>
-                        <span class="filter-btn" onclick="filterCatalog(event, 'ward')">อุปกรณ์วอร์ด</span>
+                </aside>
+
+                <!-- Catalog Content -->
+                <div class="catalog-content">
+                    <div class="section-header-flex"
+                        style="margin-bottom: 25px; border-bottom: 2px solid var(--color-primary); padding-bottom: 15px;">
+                        <div>
+                            <h2 class="section-title" style="margin-bottom: 5px; font-size: 24px; text-align: left;">
+                                แคตตาล็อกสินค้าพื้นฐาน</h2>
+                            <h3 class="section-subtitle m-0" style="font-size: 15px; text-align: left;">
+                                รายการครุภัณฑ์ทางการแพทย์ (บางส่วน)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Product Grid with data-category for JS filter -->
+                    <div class="catalog-grid">
+                        <div class="catalog-item" data-category="ward">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p1/400/400.jpg"
+                                    alt="เสาน้ำเกลือฐาน 4 แฉก"></div>
+                            <div class="item-info">
+                                <div class="item-name">เสาน้ำเกลือฐาน 4 แฉก</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="beds">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p2/400/400.jpg"
+                                    alt="ตู้เก็บเวชระเบียนสแตนเลส"></div>
+                            <div class="item-info">
+                                <div class="item-name">ตู้เก็บเวชระเบียนสแตนเลส</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="carts">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p3/400/400.jpg"
+                                    alt="รถเข็นผู้ป่วย Stretcher Cart"></div>
+                            <div class="item-info">
+                                <div class="item-name">รถเข็นผู้ป่วย Stretcher Cart</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="ward">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p4/400/400.jpg" alt="ที่วางอ่าง">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">ที่วางอ่าง</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="carts">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p6/400/400.jpg"
+                                    alt="รถเข็นจ่ายยาสแตนเลส 2 ชั้น"></div>
+                            <div class="item-info">
+                                <div class="item-name">รถเข็นจ่ายยาสแตนเลส 2 ชั้น</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="beds">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p7/400/400.jpg"
+                                    alt="เตียงตรวจครรภ์และทำคลอด"></div>
+                            <div class="item-info">
+                                <div class="item-name">เตียงตรวจครรภ์และทำคลอด</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="carts">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p9/400/400.jpg"
+                                    alt="รถเข็นเครื่องมือแพทย์"></div>
+                            <div class="item-info">
+                                <div class="item-name">รถเข็นเครื่องมือแพทย์</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="ward">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p10/400/400.jpg"
+                                    alt="ที่วางหม้อนึ่งฆ่าเชื้อ"></div>
+                            <div class="item-info">
+                                <div class="item-name">ที่วางหม้อนึ่งฆ่าเชื้อ</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                        <div class="catalog-item" data-category="beds">
+                            <div class="img-box"><img src="https://picsum.photos/seed/p12/400/400.jpg"
+                                    alt="เตียงตรวจโรค 2 ตอน"></div>
+                            <div class="item-info">
+                                <div class="item-name">เตียงตรวจโรค 2 ตอน</div>
+                                <div class="item-price">฿ ติดต่อสอบถาม</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-30" style="margin-top: 40px;">
+                        <p class="body-text mb-20 text-muted">* รายการข้างต้นเป็นเพียงส่วนหนึ่งของผลงาน
+                            เราสามารถผลิตตามแบบ Requirement ที่ท่านต้องการได้</p>
+                        <a href="#contact" class="btn btn-outline">ดาวน์โหลดแคตตาล็อกฉบับเต็ม</a>
                     </div>
                 </div>
 
-                <!-- Product Grid with data-category for JS filter -->
-                <div class="catalog-grid">
-                    <div class="catalog-item" data-category="ward">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p1/400/400.jpg"
-                                alt="เสาน้ำเกลือฐาน 4 แฉก"></div>
-                        <div class="item-info">
-                            <div class="item-name">เสาน้ำเกลือฐาน 4 แฉก</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="beds">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p2/400/400.jpg"
-                                alt="ตู้เก็บเวชระเบียนสแตนเลส"></div>
-                        <div class="item-info">
-                            <div class="item-name">ตู้เก็บเวชระเบียนสแตนเลส</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p3/400/400.jpg"
-                                alt="รถเข็นผู้ป่วย Stretcher Cart"></div>
-                        <div class="item-info">
-                            <div class="item-name">รถเข็นผู้ป่วย Stretcher Cart</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="ward">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p4/400/400.jpg" alt="ที่วางอ่าง">
-                        </div>
-                        <div class="item-info">
-                            <div class="item-name">ที่วางอ่าง</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p6/400/400.jpg"
-                                alt="รถเข็นจ่ายยาสแตนเลส 2 ชั้น"></div>
-                        <div class="item-info">
-                            <div class="item-name">รถเข็นจ่ายยาสแตนเลส 2 ชั้น</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="beds">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p7/400/400.jpg"
-                                alt="เตียงตรวจครรภ์และทำคลอด"></div>
-                        <div class="item-info">
-                            <div class="item-name">เตียงตรวจครรภ์และทำคลอด</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p9/400/400.jpg"
-                                alt="รถเข็นเครื่องมือแพทย์"></div>
-                        <div class="item-info">
-                            <div class="item-name">รถเข็นเครื่องมือแพทย์</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="ward">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p10/400/400.jpg"
-                                alt="ที่วางหม้อนึ่งฆ่าเชื้อ"></div>
-                        <div class="item-info">
-                            <div class="item-name">ที่วางหม้อนึ่งฆ่าเชื้อ</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="beds">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p12/400/400.jpg"
-                                alt="เตียงตรวจโรค 2 ตอน"></div>
-                        <div class="item-info">
-                            <div class="item-name">เตียงตรวจโรค 2 ตอน</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="ward">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p13/400/400.jpg"
-                                alt="โต๊ะตรวจ สแตนเลส 2 ชั้น"></div>
-                        <div class="item-info">
-                            <div class="item-name">โต๊ะตรวจ สแตนเลส 2 ชั้น</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="beds">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p15/400/400.jpg"
-                                alt="ตู้เก็บของอเนกประสงค์"></div>
-                        <div class="item-info">
-                            <div class="item-name">ตู้เก็บของอเนกประสงค์</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="ward">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p17/400/400.jpg"
-                                alt="โต๊ะวางเครื่องมือแพทย์ 2 ชั้น"></div>
-                        <div class="item-info">
-                            <div class="item-name">โต๊ะวางเครื่องมือแพทย์ 2 ชั้น</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p19/400/400.jpg"
-                                alt="รถเข็นของ 2 ชั้นลวดดัด"></div>
-                        <div class="item-info">
-                            <div class="item-name">รถเข็นของ 2 ชั้นลวดดัด</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p21/400/400.jpg" alt="รถคลิปเด็กอ่อน">
-                        </div>
-                        <div class="item-info">
-                            <div class="item-name">รถคลิปเด็กอ่อน</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p24/400/400.jpg" alt="รถเข็นฉุกเฉิน">
-                        </div>
-                        <div class="item-info">
-                            <div class="item-name">รถเข็นฉุกเฉิน</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                    <div class="catalog-item" data-category="carts">
-                        <div class="img-box"><img src="https://picsum.photos/seed/p25/400/400.jpg"
-                                alt="รถเข็นแล็ป 3 ด้าย 2 ลิ้นชัก"></div>
-                        <div class="item-info">
-                            <div class="item-name">รถเข็นแล็ป 3 ด้าย 2 ลิ้นชัก</div>
-                            <div class="item-price">฿ ติดต่อสอบถาม</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-30">
-                    <p class="body-text mb-20 text-muted">* รายการข้างต้นเป็นเพียงส่วนหนึ่งของผลงาน เราสามารถผลิตตามแบบ
-                        Requirement ที่ท่านต้องการได้</p>
-                    <a href="#contact" class="btn btn-outline">ดาวน์โหลดแคตตาล็อกฉบับเต็ม</a>
-                </div>
             </div>
         </section>
 
@@ -339,30 +306,31 @@
     <footer class="footer bg-light border-top">
         <div class="container footer-grid">
             <div class="footer-col">
-                <a href="index.html" class="logo mb-20 block">
-                    <strong>DJK</strong> EQUIPMENT
-                </a>
-                <p class="body-text text-muted">ผู้เชี่ยวชาญด้านการผลิตครุภัณฑ์และอุปกรณ์ทางการแพทย์สแตนเลส (SUS 304)
-                    ประสบการณ์กว่า 10 ปี</p>
+                <h4 class="footer-heading">DJK Equipment<br>Co., Ltd.</h4>
+                <p class="body-text text-muted" style="line-height: 1.8;">
+                    ผู้เชี่ยวชาญด้านการผลิตครุภัณฑ์ทางการแพทย์สแตนเลส SUS 304<br>ประสบการณ์กว่า 10 ปี
+                    บริการครบวงจรสำหรับโรงพยาบาลและบริษัทตัวแทนจำหน่ายทั่วประเทศ</p>
             </div>
             <div class="footer-col">
-                <h4 class="footer-heading">ติดต่อบริษัท</h4>
+                <h4 class="footer-heading">ติดต่อ</h4>
                 <ul class="footer-contact-list text-muted">
-                    <li><strong>ที่อยู่:</strong> 123 ถนนอุตสาหกรรม ตำบล/อำเภอ จังหวัด 10000</li>
-                    <li><strong>โทรศัพท์:</strong> 02-XXX-XXXX</li>
-                    <li><strong>มือถือ:</strong> 08X-XXX-XXXX</li>
-                    <li><strong>อีเมล:</strong> sales@djkequipment.com</li>
+                    <li><span style="color: #D32F2F; font-size: 16px;">☎️</span> โทร: 02-XXX-XXXX</li>
+                    <li><span style="font-size: 16px;">📱</span> Line ID: @djkequipment</li>
+                    <li><span style="font-size: 16px;">📧</span> Email: sales@djk.co.th</li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4 class="footer-heading">เวลาทำการ</h4>
-                <p class="body-text text-muted">จันทร์ - ศุกร์: 08:30 - 17:30 น.<br>เสาร์: 08:30 - 12:00
-                    น.<br>ปิดทำการวันอาทิตย์และวันหยุดนักขัตฤกษ์</p>
+                <p class="body-text text-muted" style="line-height: 1.8;">
+                    จันทร์ - ศุกร์ : 08:30 – 17:30 น.<br>
+                    เสาร์ : 08:30 – 12:00 น.<br>
+                    หยุดวันอาทิตย์และวันหยุดนักขัตฤกษ์
+                </p>
             </div>
         </div>
-        <div class="footer-bottom text-center text-muted">
+        <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2024 DJK Equipment Co.,Ltd. All rights reserved.</p>
+                <p>&copy; 2024 DJK Equipment Co., Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -372,20 +340,16 @@
 <script>
     function filterCatalog(event, category) {
         event.preventDefault();
-        const buttons = document.querySelectorAll('.filter-btn');
-        buttons.forEach(b => b.classList.remove('active'));
-        if (event.currentTarget && event.currentTarget.classList && event.currentTarget.classList.contains('filter-btn')) {
-            event.currentTarget.classList.add('active');
-        } else {
-            // Called from dropdown - activate the 'all' or matching button
-            buttons.forEach(b => {
-                if ((category === 'all' && b.textContent.includes('ทั้งหมด')) ||
-                    (category === 'beds' && b.textContent.includes('เตียง')) ||
-                    (category === 'carts' && b.textContent.includes('รถเข็น')) ||
-                    (category === 'ward' && b.textContent.includes('อุปกรณ์'))) {
-                    b.classList.add('active');
-                }
-            });
+
+        // Update Sidebar active state
+        const buttons = document.querySelectorAll('.sidebar-menu a');
+        if (buttons.length > 0) {
+            buttons.forEach(b => b.classList.remove('active'));
+            if (event && event.currentTarget && event.currentTarget.tagName === 'A') {
+                event.currentTarget.classList.add('active');
+            } else {
+                buttons[0].classList.add('active'); // default to 'all'
+            }
         }
 
         const items = document.querySelectorAll('.catalog-item');
@@ -399,20 +363,6 @@
 
         document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-
-    // Wire filter-btn clicks properly
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            const text = this.textContent;
-            let cat = 'all';
-            if (text.includes('เตียง')) cat = 'beds';
-            else if (text.includes('รถเข็น')) cat = 'carts';
-            else if (text.includes('อุปกรณ์')) cat = 'ward';
-            filterCatalog(e, cat);
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
 </script>
 
 </html>
