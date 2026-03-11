@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO & Ads -->
+    <title>บริษัท ดีเจเค อิควิปเม้นท์ จำกัด - Layout 3 (Hybrid สมัยใหม่ + เลย์เอาต์เดิม)</title>
+    <meta name="description"
+        content="โรงงานรับผลิตครุภัณฑ์ทางการแพทย์ อุปกรณ์การแพทย์สแตนเลส (SUS 304) ประสบการณ์กว่า 10 ปี บริการผลิตตามแบบสำหรับสถานพยาบาลและบริษัทตัวแทนจำหน่าย">
+    <meta name="keywords"
+        content="ครุภัณฑ์ทางการแพทย์, ผลิตอุปกรณ์การแพทย์, รถเข็นสแตนเลส, เตียงผู้ป่วย, เสาน้ำเกลือ, สแตนเลสทางการแพทย์, OEM Medical Equipment">
+
+    <!-- Kanit Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles-monochrome.css">
+
+    <style>
+        /* Specific Styles for Layout 3 (Hybrid) */
+        .hybrid-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+            align-items: start;
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-section {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-title {
+            background: var(--color-primary-gradient);
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 10px 0;
+        }
+
+        .sidebar-list li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 20px;
+            color: var(--color-text-dark);
+            font-size: 14px;
+            transition: all var(--transition-speed);
+        }
+
+        .sidebar-list li a::before {
+            content: '›';
+            color: var(--color-primary);
+            font-size: 20px;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .sidebar-list li a:hover {
+            background-color: var(--color-bg-light);
+            color: var(--color-primary);
+            padding-left: 25px;
+        }
+
+        .sidebar-contact {
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .sidebar-contact h4 {
+            color: var(--color-text-dark);
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .sidebar-contact p {
+            font-size: 14px;
+            color: var(--color-text-body);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Adjust catalog grid for 3 columns instead of 4 due to sidebar */
+        .hybrid-layout .catalog-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .hybrid-layout .section-header-flex {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar (Contact Info) -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span class="top-info">บริษัท ดีเจเค อิควิปเม้นท์ จำกัด (DJK Equipment Co.,Ltd.)</span>
+            <div class="top-contact">
+                <span>โทร: 02-XXX-XXXX</span>
+                <span class="divider">|</span>
+                <span>Line ID: @DJKMEDICAL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <strong>DJK</strong> EQUIPMENT
+            </a>
+            <nav class="main-nav">
+                <a href="#about" class="nav-link">เกี่ยวกับเรา</a>
+                <a href="#standards" class="nav-link">มาตรฐานการผลิต</a>
+                <div class="dropdown">
+                    <a href="#products" class="nav-link">แคตตาล็อกสินค้า</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#products" onclick="filterCatalog(event,'beds')">หมวดเตียงผู้ป่วย</a></li>
+                        <li><a href="#products" onclick="filterCatalog(event,'carts')">หมวดรถเข็น</a></li>
+                        <li><a href="#products" onclick="filterCatalog(event,'ward')">หมวดอุปกรณ์วอร์ด</a></li>
+                        <li><a href="#products" onclick="filterCatalog(event,'all')">ดูทั้งหมด</a></li>
+                    </ul>
+                </div>
+                <a href="#contact" class="nav-link btn-nav-cta">ติดต่อฝ่ายขาย (OEM)</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section (B2B Value Prop) -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge">MEDICAL EQUIPMENT MANUFACTURER</span>
+                    <h1 class="hero-title">โรงงานรับผลิต<br>ครุภัณฑ์ทางการแพทย์</h1>
+                    <p class="hero-subtitle">บริการรับผลิต (OEM) อุปกรณ์และครุภัณฑ์สแตนเลสทางการแพทย์
+                        ตามแบบที่สถานพยาบาลต้องการ ด้วยมาตรฐาน SUS 304 สำหรับบริษัทตัวแทนจำหน่ายและโรงพยาบาล</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">ขอใบเสนอราคา (B2B)</a>
+                        <a href="#products" class="btn btn-secondary">ดูแคตตาล็อกสินค้า</a>
+                    </div>
+                </div>
+                <!-- Placeholder for high-quality factory/welding background image -->
+                <div class="hero-image-wrapper">
+                    <img src="https://picsum.photos/seed/djk-factory/800/600.jpg" alt="โรงงานผลิตครุภัณฑ์ทางการแพทย์"
+                        class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Metrics Bar -->
+        <div class="trust-metrics-bar">
+            <div class="container metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-value">10+</div>
+                    <div class="metric-label">ปี ประสบการณ์การผลิต</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">SUS 304</div>
+                    <div class="metric-label">มาตรฐานสแตนเลสการแพทย์</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">OEM</div>
+                    <div class="metric-label">ผลิตตามแบบ (Customization)</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">ตรวจสอบคุณภาพก่อนส่งมอบ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HYBRID LAYOUT WRAPPER (Sidebar + Products) -->
+        <div class="container hybrid-layout" id="products">
+
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">☰ หมวดหมู่สินค้า</div>
+                    <ul class="sidebar-list">
+                        <li><a href="#" onclick="filterCatalog(event, 'all')">สินค้าทั้งหมด</a></li>
+                        <li><a href="#" onclick="filterCatalog(event, 'beds')">เตียงผู้ป่วย / ตู้สแตนเลส</a></li>
+                        <li><a href="#" onclick="filterCatalog(event, 'carts')">รถเข็นสแตนเลส / จ่ายยา</a></li>
+                        <li><a href="#" onclick="filterCatalog(event, 'ward')">อุปกรณ์ทั่วไปในวอร์ด</a></li>
+                        <li><a href="#" onclick="filterCatalog(event, 'ward')">เสาน้ำเกลือ / ที่วางอ่าง</a></li>
+                        <li><a href="#" onclick="filterCatalog(event, 'beds')">โต๊ะตรวจโรค / โต๊ะคลอด</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-contact">
+                    <h4>ติดต่อสั่งซื้อด่วน</h4>
+                    <p>☎ 02-XXX-XXXX</p>
+                    <p>📱 Line: @djkequipment</p>
+                    <p>📧 sales@djkequipment.com</p>
+                </div>
+            </aside>
+
+            <!-- Right Content (Catalog) -->
+            <div class="category-content">
+                <div class="section-header-flex"
+                    style="margin-bottom: 20px; border-bottom: 2px solid var(--color-primary); padding-bottom: 10px;">
+                    <div>
+                        <h2 class="section-title" style="margin-bottom: 5px; font-size: 24px;">แคตตาล็อกสินค้าพื้นฐาน
+                        </h2>
+                        <h3 class="section-subtitle m-0" style="font-size: 15px;">รายการครุภัณฑ์ทางการแพทย์ (บางส่วน)
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Product Grid with data-category for JS filter -->
+                <div class="catalog-grid">
+                    <div class="catalog-item" data-category="ward">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p1/400/400.jpg"
+                                alt="เสาน้ำเกลือฐาน 4 แฉก"></div>
+                        <div class="item-info">
+                            <div class="item-name">เสาน้ำเกลือฐาน 4 แฉก</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="beds">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p2/400/400.jpg"
+                                alt="ตู้เก็บเวชระเบียนสแตนเลส"></div>
+                        <div class="item-info">
+                            <div class="item-name">ตู้เก็บเวชระเบียนสแตนเลส</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="carts">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p3/400/400.jpg"
+                                alt="รถเข็นผู้ป่วย Stretcher Cart"></div>
+                        <div class="item-info">
+                            <div class="item-name">รถเข็นผู้ป่วย Stretcher Cart</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="ward">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p4/400/400.jpg" alt="ที่วางอ่าง">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-name">ที่วางอ่าง</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="carts">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p6/400/400.jpg"
+                                alt="รถเข็นจ่ายยาสแตนเลส 2 ชั้น"></div>
+                        <div class="item-info">
+                            <div class="item-name">รถเข็นจ่ายยาสแตนเลส 2 ชั้น</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="beds">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p7/400/400.jpg"
+                                alt="เตียงตรวจครรภ์และทำคลอด"></div>
+                        <div class="item-info">
+                            <div class="item-name">เตียงตรวจครรภ์และทำคลอด</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="carts">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p9/400/400.jpg"
+                                alt="รถเข็นเครื่องมือแพทย์"></div>
+                        <div class="item-info">
+                            <div class="item-name">รถเข็นเครื่องมือแพทย์</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="ward">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p10/400/400.jpg"
+                                alt="ที่วางหม้อนึ่งฆ่าเชื้อ"></div>
+                        <div class="item-info">
+                            <div class="item-name">ที่วางหม้อนึ่งฆ่าเชื้อ</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                    <div class="catalog-item" data-category="beds">
+                        <div class="img-box"><img src="https://picsum.photos/seed/p12/400/400.jpg"
+                                alt="เตียงตรวจโรค 2 ตอน"></div>
+                        <div class="item-info">
+                            <div class="item-name">เตียงตรวจโรค 2 ตอน</div>
+                            <div class="item-price">฿ ติดต่อสอบถาม</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-30">
+                    <p class="body-text mb-20 text-muted">* นอกเหนือจากแคตตาล็อก เราสามารถรับผลิตตามแบบ Drawing
+                        ของลูกค้าได้</p>
+                    <a href="#contact" class="btn btn-outline">ดาวน์โหลดแคตตาล็อกฉบับเต็ม</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- About Profile -->
+        <section id="about" class="section profile-section border-top bg-light">
+            <div class="container split-grid">
+                <div class="content-block">
+                    <h2 class="section-title">ข้อมูลบริษัท</h2>
+                    <h3 class="section-subtitle">ประสบการณ์และความเชี่ยวชาญ</h3>
+                    <p class="body-text mb-20">บริษัท ดีเจเค อิควิปเม้นท์ จำกัด
+                        ดำเนินธุรกิจผลิตชิ้นงานสแตนเลสสำหรับใช้ในสถานพยาบาล
+                        เรามีความเชี่ยวชาญในระบบการผลิตและมาตรฐานอุตสาหกรรม เพื่อให้ครุภัณฑ์ทุกชิ้นมีความแข็งแรง ปลอดภัย
+                        และเหมาะสมกับการใช้งานจริง</p>
+                    <ul class="core-values-list">
+                        <li>รับผลิตชิ้นงานสแตนเลส โครงสร้างแข็งแรง ไม่เป็นสนิมง่าย</li>
+                        <li>งานเชื่อมประกอบละเอียด รอยเชื่อมลวดสแตนเลส 304</li>
+                        <li>สามารถผลิตตามแบบ (Drawing) เพื่อตอบสนองความต้องการเฉพาะ</li>
+                        <li>ระบบการจัดการคุณภาพ มีการส่งมอบตรงเวลา พร้อมเอกสารประกอบ</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <img src="https://picsum.photos/seed/djk-team2/600/500.jpg" alt="ทีมงาน DJK อิควิปเม้นท์"
+                        class="bordered-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Strong B2B CTA Section -->
+        <section id="contact" class="cta-section bg-primary text-white text-center">
+            <div class="container">
+                <h2 class="cta-title">ยินดีขายปลีกให้กับสถานพยาบาล และ<br>ขายส่ง (OEM) ให้บริษัทอุปกรณ์ทางการแพทย์</h2>
+                <p class="cta-subtitle">ปรึกษาเรื่องการผลิต สอบถามราคา หรือจัดส่งแบบเพื่อประเมินราคา (ไม่มีค่าใช้จ่าย)
+                </p>
+                <div class="cta-button-group">
+                    <a href="#" class="btn btn-white.solid">แอด Line: @DJKMEDICAL</a>
+                    <a href="tel:02XXXXXXX" class="btn btn-white-outline">โทรสอบถาม: 02-XXX-XXXX</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Corporate Footer -->
+    <footer class="footer bg-light border-top">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo mb-20 block">
+                    <strong>DJK</strong> EQUIPMENT
+                </a>
+                <p class="body-text text-muted">ผู้เชี่ยวชาญด้านการผลิตครุภัณฑ์และอุปกรณ์ทางการแพทย์สแตนเลส (SUS 304)
+                    ประสบการณ์กว่า 10 ปี</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">ติดต่อบริษัท</h4>
+                <ul class="footer-contact-list text-muted">
+                    <li><strong>ที่อยู่:</strong> 123 ถนนอุตสาหกรรม ตำบล/อำเภอ จังหวัด 10000</li>
+                    <li><strong>โทรศัพท์:</strong> 02-XXX-XXXX</li>
+                    <li><strong>มือถือ:</strong> 08X-XXX-XXXX</li>
+                    <li><strong>อีเมล:</strong> sales@djkequipment.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">เวลาทำการ</h4>
+                <p class="body-text text-muted">จันทร์ - ศุกร์: 08:30 - 17:30 น.<br>เสาร์: 08:30 - 12:00
+                    น.<br>ปิดทำการวันอาทิตย์และวันหยุดนักขัตฤกษ์</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center text-muted">
+            <div class="container">
+                <p>&copy; 2024 DJK Equipment Co.,Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    function filterCatalog(event, category) {
+        event.preventDefault();
+
+        const items = document.querySelectorAll('.catalog-item');
+        items.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+</script>
+
+</html>

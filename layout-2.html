@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJK Equipment - Layout 2 (คู่แข่งเป๊ะ)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+      font-size: 14px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: #1565C0;
+      color: #fff;
+      font-size: 13px;
+      padding: 6px 0;
+      text-align: center;
+    }
+
+    /* Header */
+    .header {
+      background: #fff;
+      border-bottom: 3px solid #1565C0;
+      padding: 15px 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-box {
+      width: 65px;
+      height: 65px;
+      background: #1565C0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+      border-radius: 4px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 22px;
+      color: #1565C0;
+    }
+
+    .logo-text span {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .hdr-contact {
+      text-align: right;
+    }
+
+    .hdr-contact .phone {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1565C0;
+    }
+
+    /* Nav Bar */
+    .nav-bar {
+      background: #1565C0;
+    }
+
+    .nav-inner {
+      display: flex;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item>a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      border-right: 1px solid rgba(255, 255, 255, .15);
+    }
+
+    .nav-item>a:hover,
+    .nav-item.active>a {
+      background: #0D47A1;
+    }
+
+    /* Banner */
+    .banner {
+      background: linear-gradient(135deg, #0D47A1, #1E88E5);
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .banner p {
+      font-size: 16px;
+      opacity: .9;
+      margin-bottom: 25px;
+    }
+
+    .banner-btns {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .btn-b1 {
+      background: #fff;
+      color: #1565C0;
+      padding: 10px 30px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .btn-b2 {
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* Main Wrap */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 25px;
+      align-items: start;
+      margin-top: 25px;
+      margin-bottom: 40px;
+    }
+
+    /* Sidebar */
+    .sb-title {
+      background: #1565C0;
+      color: #fff;
+      padding: 10px 15px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .sb-list {
+      list-style: none;
+      border: 1px solid #ddd;
+      border-top: none;
+      margin-bottom: 20px;
+    }
+
+    .sb-list li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+      color: #333;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .sb-list li a::before {
+      content: '›';
+      color: #1565C0;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .sb-list li a:hover {
+      background: #e3f2fd;
+      color: #1565C0;
+    }
+
+    .sb-list li:last-child a {
+      border-bottom: none;
+    }
+
+    /* Content Area */
+    .sec-heading {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1565C0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #1565C0;
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      background: #fff;
+      text-align: center;
+      transition: box-shadow .2s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+    }
+
+    .p-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .p-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .p-img::after {
+      content: 'Line : @djkequipment | 02-XXX-XXXX';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(21, 101, 192, .85);
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+
+    .p-body {
+      padding: 12px;
+    }
+
+    .p-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    .p-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1565C0;
+    }
+
+    .about-box {
+      background: #f8f8f8;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    /* Footer */
+    .footer {
+      background: #f5f5f5;
+      border-top: 3px solid #1565C0;
+      padding: 30px 0 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer h4 {
+      color: #1565C0;
+      font-size: 16px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 8px;
+    }
+
+    .footer-bottom {
+      background: #1565C0;
+      color: rgba(255, 255, 255, .8);
+      text-align: center;
+      font-size: 13px;
+      padding: 12px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">บริษัท ดีเจเค อิควิปเม้นท์ จำกัด | โทร: 02-XXX-XXXX | Line: @djkequipment | เปิดทำการ จ-ศ
+    08:30-17:30</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="logo-box">DJK</div>
+        <div class="logo-text">
+          <strong>DJK Equipment</strong>
+          <span>ผู้ผลิตและจำหน่ายครุภัณฑ์ทางการแพทย์สแตนเลส</span>
+        </div>
+      </div>
+      <div class="hdr-contact">
+        <div class="phone">☎ 02-XXX-XXXX</div>
+        <div>Line ID: @djkequipment | Email: sales@djk.co.th</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="container nav-inner">
+      <div class="nav-item active"><a href="#">หน้าแรก</a></div>
+      <div class="nav-item"><a href="#">เกี่ยวกับโรงงาน</a></div>
+      <div class="nav-item"><a href="#">มาตรฐานการผลิต</a></div>
+      <div class="nav-item"><a href="#">ติดต่อสั่งซื้อ / ขอใบเสนอราคา</a></div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container">
+      <h1>โรงงานผลิตครุภัณฑ์ทางการแพทย์ สแตนเลส SUS 304</h1>
+      <p>รับผลิตตามแบบ (OEM) สำหรับสถานพยาบาลและบริษัทตัวแทนจำหน่าย • ประสบการณ์กว่า 10 ปี</p>
+      <div class="banner-btns">
+        <a href="#" class="btn-b1">ขอใบเสนอราคา (OEM)</a>
+        <a href="#" class="btn-b2">ติดต่อฝ่ายขาย</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <div class="container main-wrap">
+
+    <!-- Sidebar -->
+    <aside>
+      <div class="sb-title">☰ หมวดหมู่สินค้า</div>
+      <ul class="sb-list">
+        <li><a href="#">หมวดเตียงผู้ป่วย</a></li>
+        <li><a href="#">หมวดรถเข็นสแตนเลส</a></li>
+        <li><a href="#">หมวดรถเข็นจ่ายยา / อุปกรณ์</a></li>
+        <li><a href="#">หมวดเสาน้ำเกลือ</a></li>
+        <li><a href="#">หมวดโต๊ะตรวจและชั้นวาง</a></li>
+        <li><a href="#">หมวดตู้เวชระเบียน / เก็บของ</a></li>
+        <li><a href="#">หมวดอุปกรณ์ทั่วไปในวอร์ด</a></li>
+      </ul>
+
+      <div class="sb-title">📞 ติดต่อด่วน</div>
+      <ul class="sb-list">
+        <li><a href="#">☎ 02-XXX-XXXX</a></li>
+        <li><a href="#">LINE: @djkequipment</a></li>
+        <li><a href="#">Email: sales@djk.co.th</a></li>
+      </ul>
+    </aside>
+
+    <!-- Right Content -->
+    <div>
+      <!-- Intro / About -->
+      <div class="sec-heading">🏭 ยินดีต้อนรับสู่ ดีเจเค อิควิปเม้นท์</div>
+      <div class="about-box" style="margin-bottom: 30px;">
+        <p style="margin-bottom: 15px; line-height: 1.6;">บริษัท ดีเจเค อิควิปเม้นท์ จำกัด ผู้ผลิตและออกแบบ
+          ครุภัณฑ์ทางการแพทย์สแตนเลส SUS 304 คุณภาพสูง สำหรับโรงพยาบาล คลินิก และบริษัทตัวแทนจำหน่ายอุปกรณ์การแพทย์
+          (OEM)
+        </p>
+        <p>✅ ผลิตจาก SUS 304 ล้วน ไม่เป็นสนิม &nbsp;&nbsp; ✅ งานเชื่อมละเอียด แข็งแรง ทนทาน &nbsp;&nbsp; ✅
+          ยินดีรับผลิตตาม Drawing</p>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="sec-heading">📦 แคตตาล็อกสินค้าพื้นฐาน (บางส่วน)</div>
+      <div class="product-grid">
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p1/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">เสาน้ำเกลือฐาน 4 แฉก</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p2/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">ตู้เก็บเวชระเบียนสแตนเลส</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p3/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">รถเข็นผู้ป่วย Stretcher Cart</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p6/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">รถเข็นจ่ายยาสแตนเลส 2 ชั้น</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p7/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">เตียงตรวจครรภ์และทำคลอด</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p9/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">รถเข็นเครื่องมือแพทย์</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p12/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">เตียงตรวจโรค 2 ตอน</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p15/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">ตู้เก็บของอเนกประสงค์</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="product-card">
+          <div class="p-img"><img src="https://picsum.photos/seed/p24/400/400.jpg" alt=""></div>
+          <div class="p-body">
+            <div class="p-name">รถเข็นฉุกเฉิน</div>
+            <div class="p-price">฿ ติดต่อสอบถาม</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>DJK Equipment Co., Ltd.</h4>
+        <p>ผู้เชี่ยวชาญด้านการผลิตครุภัณฑ์ทางการแพทย์สแตนเลส SUS 304 ประสบการณ์กว่า 10 ปี
+          บริการครบวงจรสำหรับโรงพยาบาลและบริษัทตัวแทนจำหน่ายทั่วประเทศ</p>
+      </div>
+      <div>
+        <h4>ติดต่อ</h4>
+        <ul style="list-style: none; color: #555; font-size: 13px; line-height: 1.8;">
+          <li>☎ โทร: 02-XXX-XXXX</li>
+          <li>📱 Line ID: @djkequipment</li>
+          <li>📧 Email: sales@djk.co.th</li>
+        </ul>
+      </div>
+      <div>
+        <h4>เวลาทำการ</h4>
+        <p style="color: #555; font-size: 13px; line-height: 1.8;">
+          จันทร์ - ศุกร์ : 08:30 – 17:30 น.<br>
+          เสาร์ : 08:30 – 12:00 น.<br>
+          หยุดวันอาทิตย์และวันหยุดนักขัตฤกษ์
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 DJK Equipment Co., Ltd. All rights reserved.</div>
+  </footer>
+</body>
+
+</html>
